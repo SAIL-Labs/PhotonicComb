@@ -1,0 +1,41 @@
+### Commands to Run ###
+###############################################################################
+dpkg-reconfigure tzdata
+date --set="23 Feb 2017 10:26:55"
+
+cd /usr/local/src/
+wget http://www.no-ip.com/client/linux/noip-duc-linux.tar.gz
+tar xf noip-duc-linux.tar.gz
+cd /usr/local/src/no-ip-2.1.9-1
+make
+make install
+
+###############################################################################
+apt-get install rsync
+rsync -arP --exclude '.vscode*' --exclude '.git*' chrisbetters@chris-delphi.sail-laboratories.com:Dropbox/github/postdoc_code/PhotonicComb/EtalonRbLock-server ~/
+
+###############################################################################
+cd /etc/init.d
+touch load94bit
+
+content:
+//file
+#!/bin/sh
+cat /root/EtalonRbLock-server/red_pitaya.bit > /dev/xdevcfg
+
+###############################################################################
+OR
+###############################################################################
+cd /etc/init.d/
+crontab -e
+
+content:
+//file
+@reboot sleep 30 && /usr/local/bin/noip2 -F
+@reboot cat /root/EtalonRbLock-server/red_pitaya.bit >/dev/xdevcfg
+
+
+
+
+
+
