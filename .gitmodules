@@ -1,0 +1,6 @@
+[submodule "EtalonRbLock-pyclient"]
+	path = EtalonRbLock-pyclient
+	url = https://christhechris@github.com/SydneyAstrophotonicInstrumentationLab/EtalonRbLock-pyclient.git
+[submodule "EtalonRbLock-server"]
+	path = EtalonRbLock-server
+	url = https://christhechris@github.com/SydneyAstrophotonicInstrumentationLab/EtalonRbLock-server.git
